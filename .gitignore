@@ -1,0 +1,8 @@
+# Ejecutables compilados
+*.exe
+*.o
+*.obj
+
+# Archivos temporales
+*.bat
+compile.bat
