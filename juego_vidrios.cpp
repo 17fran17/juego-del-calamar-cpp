@@ -139,36 +139,60 @@ void mostrarVidas(int vidas) {
 void mostrarBanner() {
     limpiarPantalla();
     cout << endl;
-    color(ROJO);
-    cout << "    _______.  ______      __    __   __   _______  " << endl;
-    cout << "   /       | /  __  \\    |  |  |  | |  | |       \\ " << endl;
-    cout << "  |   (----`|  |  |  |   |  |  |  | |  | |  .--.  |" << endl;
-    cout << "   \\   \\    |  |  |  |   |  |  |  | |  | |  |  |  |" << endl;
-    cout << "    \\   \\   |  `--'  '--.|  `--'  | |  | |  '--'  |" << endl;
-    cout << "     \\   \\   \\_____\\_____\\\\______/  |__| |_______/ " << endl;
-    cout << "      \\   \\                                        " << endl;
-    color(MAGENTA);
-    cout << "    _______      ___      .___  ___.  _______     " << endl;
-    cout << "   /  _____|    /   \\     |   \\/   | |   ____|    " << endl;
-    cout << "  |  |  __     /  ^  \\    |  \\  /  | |  |__       " << endl;
-    cout << "  |  | |_ |   /  /_\\  \\   |  |\\/|  | |   __|      " << endl;
-    cout << "  |  |__| |  /  _____  \\  |  |  |  | |  |____     " << endl;
-    cout << "   \\______| /__/     \\__\\ |__|  |__| |_______|    " << endl;
-    cout << endl;
-    color(CYAN);
-    cout << "  ========================================================" << endl;
-    cout << "  ||                    USFQ                            ||" << endl;
+
+    //  Ancho fijo: 56 caracteres entre los bordes exteriores
+    //  ||  + 50 contenido + ||  = 54 interior
+    //  +  + 54 signos     + +   = 56 total
+
+    // Logo USFQ en ASCII art grande
     color(AMARILLO);
-    cout << "  ||           P R U E B A  D E  L O S                 ||" << endl;
-    cout << "  ||               V I D R I O S                       ||" << endl;
-    color(CYAN);
+    cout << "  +======================================================+" << endl;
     cout << "  ||                                                    ||" << endl;
+    cout << "  ||  U   U  SSSSS  FFFFF  QQQQQ                       ||" << endl;
+    cout << "  ||  U   U  S      F      Q   Q                       ||" << endl;
+    cout << "  ||  U   U  SSSSS  FFFF   Q   Q                       ||" << endl;
+    cout << "  ||  U   U      S  F      Q  QQ                       ||" << endl;
+    cout << "  ||   UUU   SSSSS  F       QQQQ Q                     ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  +======================================================+" << endl;
+    color(BLANCO);
+    cout << endl;
+
+    // Logo SQUID GAME
+    color(ROJO);
+    cout << "  +======================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||   SSSS   QQQQQ  U   U  III  DDDD                  ||" << endl;
+    cout << "  ||  S       Q   Q  U   U   I   D   D                 ||" << endl;
+    cout << "  ||   SSSS   Q   Q  U   U   I   D   D                 ||" << endl;
+    cout << "  ||      S   Q  QQ  U   U   I   D   D                 ||" << endl;
+    cout << "  ||  SSSS     QQQQ   UUU   III  DDDD                  ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    color(MAGENTA);
+    cout << "  ||   GGGG    AAA   M   M  EEEEE                      ||" << endl;
+    cout << "  ||  G       A   A  MM MM  E                           ||" << endl;
+    cout << "  ||  G  GG   AAAAA  M M M  EEEE                       ||" << endl;
+    cout << "  ||  G   G   A   A  M   M  E                          ||" << endl;
+    cout << "  ||   GGGG   A   A  M   M  EEEEE                      ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    color(ROJO);
+    cout << "  +======================================================+" << endl;
+    color(BLANCO);
+    cout << endl;
+
+    // Recuadro de info del juego (mismo ancho: 56 chars)
+    color(CYAN);
+    cout << "  +------------------------------------------------------+" << endl;
+    color(AMARILLO);
+    cout << "  |         P R U E B A   D E   L O S                    |" << endl;
+    cout << "  |             V I D R I O S                             |" << endl;
+    color(CYAN);
+    cout << "  |------------------------------------------------------|" << endl;
     color(GRIS);
-    cout << "  ||   Cruza el puente de vidrio sin caer al vacio.    ||" << endl;
-    cout << "  ||   Algunos vidrios son falsos... elige bien.       ||" << endl;
+    cout << "  |  Cruza el puente de vidrio sin caer al vacio.        |" << endl;
+    cout << "  |  Algunos vidrios son falsos... elige bien.           |" << endl;
     color(CYAN);
-    cout << "  ||                                                    ||" << endl;
-    cout << "  ========================================================" << endl;
+    cout << "  +------------------------------------------------------+" << endl;
     color(BLANCO);
     cout << endl;
 }
@@ -525,27 +549,27 @@ void procesarSalto(int tablero[][COLS],
 void mostrarMensajeCaida(int fila, int col, int vidasRestantes) {
     cout << endl;
     color(ROJO);
-    cout << "  +================================================+" << endl;
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||    * * * C R A A A C K ! ! ! * * *           ||" << endl;
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||    El vidrio en [" << fila << "," << col << "] se ha roto!          ||" << endl;
-    cout << "  ||                                              ||" << endl;
+    cout << "  +======================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||    * * * C R A A A C K ! ! ! * * *                 ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||    El vidrio en [" << fila << "," << col << "] se ha roto!                ||" << endl;
+    cout << "  ||                                                    ||" << endl;
 
     if (vidasRestantes > 0) {
         color(AMARILLO);
-        cout << "  ||    Alguien te atrapo justo a tiempo!        ||" << endl;
-        cout << "  ||    Te quedan " << vidasRestantes << " vida(s).                   ||" << endl;
-        cout << "  ||    Vuelves a tu posicion anterior.          ||" << endl;
+        cout << "  ||    Alguien te atrapo justo a tiempo!              ||" << endl;
+        cout << "  ||    Te quedan " << vidasRestantes << " vida(s).                         ||" << endl;
+        cout << "  ||    Vuelves a tu posicion anterior.                ||" << endl;
     } else {
         color(ROJO);
-        cout << "  ||    No queda nadie para atraparte...         ||" << endl;
-        cout << "  ||    Caes al vacio.                           ||" << endl;
+        cout << "  ||    No queda nadie para atraparte...               ||" << endl;
+        cout << "  ||    Caes al vacio.                                 ||" << endl;
     }
 
     color(ROJO);
-    cout << "  ||                                              ||" << endl;
-    cout << "  +================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  +======================================================+" << endl;
     color(BLANCO);
     cout << endl;
 }
@@ -556,21 +580,21 @@ void mostrarMensajeCaida(int fila, int col, int vidasRestantes) {
 void mostrarMensajeDerrota() {
     cout << endl;
     color(ROJO);
-    cout << "  +================================================+" << endl;
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||     ____                                     ||" << endl;
-    cout << "  ||    |    |                                    ||" << endl;
-    cout << "  ||    |    O    G A M E   O V E R               ||" << endl;
-    cout << "  ||    |   /|\\                                   ||" << endl;
-    cout << "  ||    |   / \\                                   ||" << endl;
-    cout << "  ||    |________                                 ||" << endl;
-    cout << "  ||                                              ||" << endl;
+    cout << "  +======================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||     ____                                           ||" << endl;
+    cout << "  ||    |    |                                          ||" << endl;
+    cout << "  ||    |    O    G A M E   O V E R                     ||" << endl;
+    cout << "  ||    |   /|\\                                         ||" << endl;
+    cout << "  ||    |   / \\                                         ||" << endl;
+    cout << "  ||    |________                                       ||" << endl;
+    cout << "  ||                                                    ||" << endl;
     color(AMARILLO);
-    cout << "  ||    Has sido E L I M I N A D O               ||" << endl;
-    cout << "  ||    del juego del calamar.                    ||" << endl;
+    cout << "  ||    Has sido E L I M I N A D O                     ||" << endl;
+    cout << "  ||    del juego del calamar.                          ||" << endl;
     color(ROJO);
-    cout << "  ||                                              ||" << endl;
-    cout << "  +================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  +======================================================+" << endl;
     color(BLANCO);
     cout << endl;
 }
@@ -584,27 +608,27 @@ void mostrarMensajeVictoria(int vidas, int turnos) {
 
     cout << endl;
     color(VERDE);
-    cout << "  +================================================+" << endl;
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||  *  *  *  *  *  *  *  *  *  *  *  *  *  *   ||" << endl;
-    cout << "  ||                                              ||" << endl;
+    cout << "  +======================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||  * * * * * * * * * * * * * * * * * * * * * *       ||" << endl;
+    cout << "  ||                                                    ||" << endl;
     color(AMARILLO);
-    cout << "  ||       HAS CRUZADO EL PUENTE!!!               ||" << endl;
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||       V I C T O R I A                        ||" << endl;
+    cout << "  ||       HAS CRUZADO EL PUENTE!!!                     ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||       V I C T O R I A                              ||" << endl;
     color(VERDE);
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||  *  *  *  *  *  *  *  *  *  *  *  *  *  *   ||" << endl;
-    cout << "  ||                                              ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||  * * * * * * * * * * * * * * * * * * * * * *       ||" << endl;
+    cout << "  ||                                                    ||" << endl;
     color(CYAN);
-    cout << "  ||  Sobreviviste a la prueba del calamar.       ||" << endl;
-    cout << "  ||  Vidas restantes: " << vidas << "                          ||" << endl;
-    cout << "  ||  Turnos usados:   " << setw(2) << turnos << "                         ||" << endl;
+    cout << "  ||  Sobreviviste a la prueba del calamar.             ||" << endl;
+    cout << "  ||  Vidas restantes: " << vidas << "                                ||" << endl;
+    cout << "  ||  Turnos usados:   " << setw(2) << turnos << "                               ||" << endl;
     color(AMARILLO);
-    cout << "  ||  PUNTUACION: " << setw(5) << puntos << " pts                    ||" << endl;
+    cout << "  ||  PUNTUACION: " << setw(5) << puntos << " pts                          ||" << endl;
     color(VERDE);
-    cout << "  ||                                              ||" << endl;
-    cout << "  +================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  +======================================================+" << endl;
     color(BLANCO);
     cout << endl;
 }
@@ -617,7 +641,7 @@ void revelarTablero(int tablero[][COLS]) {
     cout << endl;
     color(AMARILLO);
     cout << "  +======================================================+" << endl;
-    cout << "  ||       TABLERO REVELADO                             ||" << endl;
+    cout << "  ||            TABLERO REVELADO                        ||" << endl;
     cout << "  +======================================================+" << endl;
     color(BLANCO);
     cout << endl;
@@ -790,18 +814,18 @@ void jugar(int tablero[][COLS]) {
     limpiarPantalla();
     color(CYAN);
     cout << endl;
-    cout << "  +================================================+" << endl;
-    cout << "  ||                                              ||" << endl;
+    cout << "  +======================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
     color(AMARILLO);
-    cout << "  ||        COMIENZA EL JUEGO                     ||" << endl;
+    cout << "  ||        COMIENZA EL JUEGO                           ||" << endl;
     color(GRIS);
-    cout << "  ||                                              ||" << endl;
-    cout << "  ||  Llega a la fila " << FILAS - 1 << " para sobrevivir.          ||" << endl;
-    cout << "  ||  Solo casillas adyacentes (no diagonal).     ||" << endl;
-    cout << "  ||  Formato de salto: fila,columna              ||" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  ||  Llega a la fila " << FILAS - 1 << " para sobrevivir.                ||" << endl;
+    cout << "  ||  Solo casillas adyacentes (no diagonal).           ||" << endl;
+    cout << "  ||  Formato de salto: fila,columna                    ||" << endl;
     color(CYAN);
-    cout << "  ||                                              ||" << endl;
-    cout << "  +================================================+" << endl;
+    cout << "  ||                                                    ||" << endl;
+    cout << "  +======================================================+" << endl;
     color(BLANCO);
     cout << endl;
     cout << "  Presiona ENTER para ver el tablero...";
@@ -940,16 +964,16 @@ int main() {
                 limpiarPantalla();
                 color(MAGENTA);
                 cout << endl;
-                cout << "  +================================================+" << endl;
-                cout << "  ||                                              ||" << endl;
-                cout << "  ||      MODO DOS JUGADORES                      ||" << endl;
-                cout << "  ||                                              ||" << endl;
+                cout << "  +======================================================+" << endl;
+                cout << "  ||                                                    ||" << endl;
+                cout << "  ||      MODO DOS JUGADORES                            ||" << endl;
+                cout << "  ||                                                    ||" << endl;
                 color(GRIS);
-                cout << "  ||  Jugador 1: Coloca los vidrios malos.        ||" << endl;
-                cout << "  ||  Jugador 2: Intenta cruzar el puente.        ||" << endl;
+                cout << "  ||  Jugador 1: Coloca los vidrios malos.              ||" << endl;
+                cout << "  ||  Jugador 2: Intenta cruzar el puente.              ||" << endl;
                 color(MAGENTA);
-                cout << "  ||                                              ||" << endl;
-                cout << "  +================================================+" << endl;
+                cout << "  ||                                                    ||" << endl;
+                cout << "  +======================================================+" << endl;
                 color(BLANCO);
                 cout << endl;
 
@@ -971,15 +995,15 @@ int main() {
                 limpiarPantalla();
                 color(CYAN);
                 cout << endl;
-                cout << "  +================================================+" << endl;
-                cout << "  ||                                              ||" << endl;
+                cout << "  +======================================================+" << endl;
+                cout << "  ||                                                    ||" << endl;
                 color(AMARILLO);
-                cout << "  ||     Se han colocado " << setw(2) << trampas << " trampas al azar...    ||" << endl;
+                cout << "  ||     Se han colocado " << setw(2) << trampas << " trampas al azar...          ||" << endl;
                 color(ROJO);
-                cout << "  ||     Buena suerte... la vas a necesitar.      ||" << endl;
+                cout << "  ||     Buena suerte... la vas a necesitar.            ||" << endl;
                 color(CYAN);
-                cout << "  ||                                              ||" << endl;
-                cout << "  +================================================+" << endl;
+                cout << "  ||                                                    ||" << endl;
+                cout << "  +======================================================+" << endl;
                 color(BLANCO);
                 cout << endl;
                 pausar();
